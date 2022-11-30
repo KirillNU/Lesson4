@@ -48,15 +48,17 @@ print(separator('#', 5) == '#####')  # True
 
 def hello_world():
     """
-    Функция печатает Hello World в формате:
-    **********
+       Функция печатает Hello World в формате:
+       **********
 
-    Hello World!
+       Hello World!
 
-    ##########
-    :return: None
-    """
-    pass
+       ##########
+       :return: None
+       """
+    print(separator('\"', 10), '\n')
+    print('Hello World!', '\n')
+    print(separator('#', 10))
 
 
 '''
@@ -80,7 +82,9 @@ def hello_who(who='World'):
     :param who: кого мы приветствуем, по умолчанию World
     :return: None
     """
-    pass
+    print(separator('\"', 10), '\n')
+    print(f'Hello {who}', '\n' )
+    print(separator('#', 10))
 
 
 '''
