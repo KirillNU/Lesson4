@@ -12,7 +12,8 @@ def simple_separator():
     Функция создает красивый резделитель из 10-и звездочек (**********)
     :return: **********
     """
-    pass
+    print('*' * 10)
+
 
 
 print(simple_separator() == '**********')  # True
@@ -20,25 +21,25 @@ print(simple_separator() == '**********')  # True
 
 def long_separator(count):
     """
-    Функция создает разделитель из звездочек число которых можно регулировать параметром count
-    :param count: количество звездочек
-    :return: строка разделитель, примеры использования ниже
-    """
-    pass
+      Функция создает разделитель из звездочек число которых можно регулировать параметром count
+      :param count: количество звездочек
+      :return: строка разделитель, примеры использования ниже
+      """
+    print('*' * count)
 
 
 print(long_separator(3) == '***')  # True
 print(long_separator(4) == '****')  # True
 
 
-def separator(simbol, count):
+def separator(symbol, count):
     """
     Функция создает разделитель из любых символов любого количества
     :param simbol: символ разделителя
     :param count: количество повторений
     :return: строка разделитель примеры использования ниже
     """
-    pass
+    return (symbol * count)
 
 
 print(separator('-', 10) == '----------')  # True
