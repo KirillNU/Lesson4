@@ -141,8 +141,8 @@ def print_key_val(**kwargs):
     :param kwargs: любое количество именованных параметров
     :return: None
     """
-    pass
-
+    for key, value in kwargs.items():
+        print(f'{key} --> {value}')
 
 """
 name --> Max
