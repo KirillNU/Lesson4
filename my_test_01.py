@@ -113,7 +113,7 @@ def print_key_val(**kwargs):
 # print_key_val(animal='Cat', is_animal=True)
 
 
-def function(**kwargs):
+def filter_function(**kwargs):
     list_filtered = []
     for i in kwargs:
        if i in list_filtered:
