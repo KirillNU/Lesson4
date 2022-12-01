@@ -123,7 +123,7 @@ is_animal --> True
 print_key_val(animal='Cat', is_animal=True)
 
 
-def my_filter(iterable, function):
+def my_filter(iterable, function=None):
     """
     (Усложненое задание со *)
     Функция фильтрует последовательность iterable и возвращает новую
