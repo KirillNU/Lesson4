@@ -156,7 +156,7 @@ is_animal --> True
 print_key_val(animal='Cat', is_animal=True)
 
 
-def my_filter(iterable, function):
+def my_filter(iterable, function=None):
     """
     (Усложненое задание со *)
     Функция фильтрует последовательность iterable и возвращает новую
@@ -166,7 +166,15 @@ def my_filter(iterable, function):
     :param function: функция фильтрации
     :return: новая отфильтрованная последовательность
     """
-    pass
+    if function is None:
+        return iterable
+
+    res = []
+    for x in iterable:
+        if function(x):
+            res.append(x)
+    return res
+
 
 
 print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
