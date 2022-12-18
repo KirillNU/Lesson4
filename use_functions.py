@@ -34,20 +34,53 @@
 Для реализации основного меню можно использовать пример ниже или написать свой
 """
 
-while True:
-    print('1. пополнение счета')
-    print('2. покупка')
-    print('3. история покупок')
-    print('4. выход')
+def main_menu():
+    print('1. пополнение счета \n')
+    print('2. покупка \n')
+    print('3. история покупок \n')
+    print('4. выход \n')
 
-    choice = input('Выберите пункт меню')
-    if choice == '1':
-        pass
-    elif choice == '2':
-        pass
-    elif choice == '3':
-        pass
-    elif choice == '4':
+
+account_balance = 0
+purchase_price = ''
+purchase_type = ''
+acc_add = ''
+purchase_history = {}
+
+while True:
+    main_menu()
+    user_input = input('Выберите пункт меню \n ->')
+
+    if user_input == '1':
+        acc_add = input('Введите величину пополнения \n ->')
+        try:
+            account_balance += float(acc_add)
+            print('Ваш балансac', account_balance)
+        except:
+            print('Велчина пополнения должно быть Число')
+    elif user_input == '2':
+        purchase_price = input('Введите сумму покупки: \n ->')
+        try:
+            if float(purchase_price) <= account_balance:
+                purchase_type = input('Введите название покупки \n ->')
+                if purchase_type in purchase_history.keys():
+                    purchase_history[purchase_type] += float(purchase_price)
+                    account_balance -= float(purchase_price)
+                    print('Текущий балансac', account_balance)
+                else:
+                    purchase_history.update({purchase_type: float(purchase_price)})
+                    account_balance -= float(purchase_price)
+                    print('Текущий балансac', account_balance)
+            else:
+                print('Недостаточно средств на счёте')
+        except:
+            print('Проверьте введенную сумму')
+
+    elif user_input == '3':
+        print('История покупок:')
+        for key, value in purchase_history.items():
+            print(f'{key}: {value}')
+    elif user_input == '4':
         break
     else:
         print('Неверный пункт меню')

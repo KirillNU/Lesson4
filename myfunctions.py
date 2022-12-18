@@ -169,11 +169,11 @@ def my_filter(iterable, function=None):
     if function is None:
         return iterable
 
-    res = []
+    result = []
     for x in iterable:
         if function(x):
-            res.append(x)
-    return res
+            result.append(x)
+    return resul
 
 
 print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
