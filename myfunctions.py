@@ -173,7 +173,7 @@ def my_filter(iterable, function=None):
     for x in iterable:
         if function(x):
             result.append(x)
-    return resul
+    return result
 
 
 print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
