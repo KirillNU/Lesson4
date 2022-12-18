@@ -5,6 +5,7 @@
 Можно использовать свой вариант программы из предыдущего дз, мой вариант реализован ниже
 Задание: переписать код используя как минимум 1 функцию
 """
+
 #
 # year = input('Ввведите год рождения А.С.Пушкина:')
 # while year != '1799':
@@ -17,39 +18,31 @@
 #     day = input('В какой день июня родился Пушкин?')
 # print('Верно')
 
-def check_data(year, day, status=True):
-    pushkin = {'b_year': 1799, 'b_day': 6, 'b_month': 6}
-    if year == pushkin.get('b_year'):
-        print('Верно')
+
+p_by = ''
+b_month = ''
+b_day = ''
+
+
+def check_month():
+    global b_month
+    while not b_month.isdigit() or b_month != '6':
+        b_month = input('Введите Число Месяца Рождения А.С. Пушкина (напр. 3) -> \n')
+    return b_month
+
+
+def check_day():
+    global b_day
+    while not b_day.isdigit() or b_day != '6':
+        b_day = input('Введите Число Дня Рождения А.С. Пушкина (напр. 12) -> \n')
+    return b_day
+
+
+while not p_by.isdigit() or p_by != '1799':
+    p_by = input('Введите Год Рождения А.С. Пушкина (напр. 1813) -> \n')
+else:
+    while b_month + b_day != '66':
+        check_month()
+        check_day()
     else:
-        print('Не верно')
-    return status
-
-p_by = int(input('Введите Год Рождения А.С. Пушкина (напр. 1813) -> \n'))
-
-check_data(p_by, 6)
-
-
-
-# В проекте создать новый модуль borndayforewer.py
-# Написать или модернизировать программу (МОДУЛЬ 3) используя условные операторы и цикл while:
-# Просим пользователя ввести год рождения А.С. Пушкина до тех пор пока он не ввел правильный год,
-# после этого спрашиваем день рождения до тех пор, пока он не ввел верный день.
-# После верного ответа выводим в терминал 'Верно' и выходим из программы
-# '''
-#
-# p_by = ''
-# b_month = ''
-# b_day = ''
-#
-# while not p_by.isdigit() or  p_by != '1799':
-#     p_by = input('Введите Год Рождения А.С. Пушкина (напр. 1813) -> \n')
-# else:
-#     while b_month + b_day != '66':
-#         while not b_month.isdigit() or b_month != '6':
-#             b_month = input('Введите Число Месяца Рождения А.С. Пушкина (напр. 3) -> \n')
-#
-#         while not b_day.isdigit() or b_day != '6':
-#             b_day = input('Введите Число Дня Рождения А.С. Пушкина (напр. 12) -> \n')
-#     else:
-#         print('Верно', '0' + b_day, '0' + b_month, ' ' + p_by)
+        print(f'Верно 0{b_day} 0{b_month} {p_by}')
